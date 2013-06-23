@@ -1,31 +1,12 @@
-/*
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Filename:	file_to_array.h
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Provide functions that read files and store the contents in an array.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Author:		Jonathan Burrows
- *	Date:		November 30th 2012
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Dependancy:	string.h
- *				stdio.h
- *				stdlib.h
- === === === === === === === === === === === === === === === === === === === === === === ===
+/*-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ *	Filename:	file_reader.c
+ +-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
  */
 #include "file_reader.h"
 
-/*
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Function:	required_buff_len
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Returns the required buffer space to store the entire file in text format.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	@param:		filename,		The location of the file to be read.
- *	@return:	buff_len,		The required buffer length to store the file. 
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Error:		If there is a error reading the file, the file is closed, and a length of
- *				zero is returned.
- === === === === === === === === === === === === === === === === === === === === === === ===
+/*-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ |	Function:	required_buff_len
+ +-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
  */
 size_t required_buff_len(char* filename){
 	size_t buff_len = 0;					/*Return value.*/
@@ -56,19 +37,9 @@ size_t required_buff_len(char* filename){
 	return buff_len;
 }
 
-/*
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Function:	required_array_len
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Returns the length an array would have to be to store the number contents
- *				of the numbers in a given file.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	@param:		filename,		The location of the file to be read.
- *	@return:	array_len,		The required array length to store the numbers in a file. 
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Error:		If there is a error reading the file, the file is closed, and a length of
- *				zero is returned.
- === === === === === === === === === === === === === === === === === === === === === === ===
+/*-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ |	Function:	required_array_len
+ +-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
  */
 size_t required_array_len(char* filename){
 	size_t array_len = 0;					/*Return value.*/
@@ -106,20 +77,9 @@ size_t required_array_len(char* filename){
 	return array_len;
 }
 
-/*
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Function:	required_array_len
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Purpose:	Returns the integer contents of a file in an array format.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	@param:		filename,		The location of the file to be read.
- *				array_len,		Length of the array, will be changed to match.
- *	@return:	array,			A pointer to the array of integers created from file.
- *				0,				The read was unsuccessful.
- === === === === === === === === === === === === === === === === === === === === === === ===
- *	Errors:		If memory failed to allocate or there was an error reading the file, the
- *				size of the array is set to zero, and a value of zero is returned.
- === === === === === === === === === === === === === === === === === === === === === === ===
+/*-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+ |	Function:	file_to_array
+ +-- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
  */
 int* file_to_array(char* filename, size_t* array_len){
 	int* array;								/*Return value*/
